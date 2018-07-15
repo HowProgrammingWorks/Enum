@@ -1,2 +1,1 @@
-# Enum
-Enumerated type
+# Enumerated type
