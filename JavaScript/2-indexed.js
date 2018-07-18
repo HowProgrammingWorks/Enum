@@ -28,7 +28,7 @@ const Enum = (...args) => {
       if (hint === 'number') {
         return numKeys ? key : parseInt(key, 10);
       }
-      return values[this.key];
+      return values[key];
     }
   };
 };
