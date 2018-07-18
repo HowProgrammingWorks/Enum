@@ -76,6 +76,10 @@ rules:
     - newIsCap: true
       capIsNew: true
       properties: true
+      capIsNewExceptions:
+        - 'Enum'
+        - 'EnumCollection'
+        - 'EnumArray'
   new-parens:
     - error
   no-lonely-if:
