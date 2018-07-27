@@ -2,9 +2,12 @@
 
 // Multiple Enum implementations
 
-const EnumArray = values => class Enum {
+class Enum {}
+
+const enumArray = values => class extends Enum {
   constructor(val) {
-    this.value = Enum.key(val);
+    super();
+    this.value = this.constructor.key(val);
   }
   static get collection() {
     return values;
@@ -20,15 +23,16 @@ const EnumArray = values => class Enum {
   }
 };
 
-const EnumCollection = values => {
+const enumCollection = values => {
   const index = {};
   for (const key in values) {
     const value = values[key];
     index[value] = key;
   }
-  return class Enum {
+  return class extends Enum {
     constructor(val) {
-      this.value = Enum.key(val);
+      super();
+      this.value = this.constructor.key(val);
     }
     static get collection() {
       return values;
@@ -48,17 +52,17 @@ const EnumCollection = values => {
   };
 };
 
-const Enum = (...args) => {
+Enum.from = (...args) => {
   const item = args[0];
   const itemType = typeof(item);
-  if (itemType === 'object') return EnumCollection(item);
-  if (itemType !== 'string') return EnumArray(args);
-  return EnumCollection(Object.assign({}, args));
+  if (itemType === 'object') return enumCollection(item);
+  if (itemType !== 'string') return enumArray(args);
+  return enumCollection(Object.assign({}, args));
 };
 
 // Example
 {
-  const Month = Enum({
+  const Month = Enum.from({
     Jan: 'January',
     Feb: 'February',
     Mar: 'March',
