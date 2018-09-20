@@ -41,7 +41,7 @@ const EnumCollection = values => {
 
 const Enum = (...args) => {
   const item = args[0];
-  const itemType = typeof(item);
+  const itemType = typeof item;
   if (itemType === 'object') return EnumCollection(item);
   if (itemType !== 'string') return EnumArray(args);
   return EnumCollection(Object.assign({}, args));

@@ -4,7 +4,7 @@
 
 const Enum = (...values) => class {
   constructor(arg) {
-    if (typeof(arg) === 'number') {
+    if (typeof arg === 'number') {
       this.value = (arg > 0 && arg <= values.length) ? arg : 0;
       return;
     }
