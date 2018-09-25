@@ -3,14 +3,14 @@
 // Enum factory
 
 const Enum = (...args) => {
-  const objectMode = typeof(args[0]) === 'object';
+  const objectMode = typeof args[0] === 'object';
   const collection = objectMode ? args[0] : args;
   const values = {};
   const index = {};
   let numKeys = false;
   for (const name in collection) {
     const value = collection[name];
-    numKeys = numKeys || typeof(value) === 'number';
+    numKeys = numKeys || typeof value === 'number';
     const key = numKeys ? value : name;
     values[key] = value;
     index[value] = key;
