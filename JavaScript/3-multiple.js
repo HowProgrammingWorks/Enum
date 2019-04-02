@@ -59,17 +59,17 @@ const testEnum = Month => {
   const unknown = new Month('Hello');
 
   console.log([
-    ['-1', neg, +neg, neg + ''],
-    ['0', zero, +zero, zero + ''],
-    ['1', first, +first, first + ''],
-    ['4', april, +april, april + ''],
-    ['May', may, +may, may + ''],
-    ['Aug', aug, +aug, aug + ''],
-    ['August', august, +august, august + ''],
-    ['11', m11, +m11, m11 + ''],
-    ['12', m12, +m12, m12 + ''],
-    ['13', m13, +m13, m13 + ''],
-    ['Hello', unknown, +unknown, unknown + '']
+    ['-1', neg],
+    ['0', zero],
+    ['1', first],
+    ['4', april],
+    ['May', may],
+    ['Aug', aug],
+    ['August', august],
+    ['11', m11],
+    ['12', m12],
+    ['13', m13],
+    ['Hello', unknown]
   ]);
 };
 
@@ -137,12 +137,12 @@ const testEnum = Month => {
   const unknown = new Hundreds('Hello');
 
   console.log([
-    ['-1', neg, +neg, neg + ''],
-    ['0', zero, +zero, zero + ''],
-    ['100', h100, +h100, h100 + ''],
-    ['200', h300, +h300, h300 + ''],
-    ['500', h500, +h500, h500 + ''],
-    ['600', h600, +h600, h600 + ''],
-    ['Hello', unknown, +unknown, unknown + '']
+    ['-1', neg],
+    ['0', zero],
+    ['100', h100],
+    ['200', h300],
+    ['500', h500],
+    ['600', h600],
+    ['Hello', unknown]
   ]);
 }

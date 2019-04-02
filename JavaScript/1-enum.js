@@ -5,10 +5,11 @@
 const Enum = (...values) => class {
   constructor(arg) {
     if (typeof arg === 'number') {
-      this.value = (arg > 0 && arg <= values.length) ? arg : 0;
+      this.value = (arg > 0 && arg <= values.length) ? arg : undefined;
       return;
     }
-    this.value = values.indexOf(arg) + 1;
+    const value = values.indexOf(arg);
+    this.value = value > 0 ? value + 1 : undefined;
   }
   [Symbol.toPrimitive](hint) {
     if (hint === 'number') return this.value;
@@ -35,12 +36,12 @@ const next = new Month(13);
 const unknown = new Month('Hello');
 
 console.log([
-  [neg, +neg, neg + ''],
-  [zero, +zero, zero + ''],
-  [first, +first, first + ''],
-  [april, +april, april + ''],
-  [may, +may, may + ''],
-  [last, +last, last + ''],
-  [next, +next, next + ''],
-  [unknown, +unknown, unknown + '']
+  [-1, neg],
+  [0, zero],
+  [1, first],
+  [4, april],
+  ['May', may],
+  [12, last],
+  [13, next],
+  ['Hello', unknown]
 ]);
