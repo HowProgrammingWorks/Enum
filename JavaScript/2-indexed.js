@@ -20,9 +20,11 @@ const Enum = (...args) => {
       const value = values[arg];
       this.key = value ? arg : index[arg];
     }
+
     static get collection() {
       return collection;
     }
+
     [Symbol.toPrimitive](hint) {
       const key = this.key;
       if (hint === 'number') {

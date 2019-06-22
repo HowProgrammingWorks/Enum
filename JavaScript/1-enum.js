@@ -11,6 +11,7 @@ const Enum = (...values) => class {
     const value = values.indexOf(arg);
     this.value = value > 0 ? value + 1 : undefined;
   }
+
   [Symbol.toPrimitive](hint) {
     if (hint === 'number') return this.value;
     return values[this.value - 1];

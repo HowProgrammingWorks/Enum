@@ -9,15 +9,19 @@ const enumArray = values => class extends Enum {
     super();
     this.value = this.constructor.key(val);
   }
+
   static get collection() {
     return values;
   }
+
   static has(val) {
     return values.includes(val);
   }
+
   static key(val) {
     return values.includes(val) ? val : undefined;
   }
+
   [Symbol.toPrimitive]() {
     return this.value;
   }
@@ -34,16 +38,20 @@ const enumCollection = values => {
       super();
       this.value = this.constructor.key(val);
     }
+
     static get collection() {
       return values;
     }
+
     static has(val) {
       return !!(values[val] || index[val]);
     }
+
     static key(val) {
       const value = values[val];
       return value ? val : index[val];
     }
+
     [Symbol.toPrimitive](hint) {
       const value = this.value;
       if (hint === 'number') return parseInt(value, 10);

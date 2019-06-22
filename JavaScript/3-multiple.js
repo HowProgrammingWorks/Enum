@@ -6,9 +6,11 @@ const EnumArray = values => class {
   constructor(val) {
     this.value = values.includes(val) ? val : undefined;
   }
+
   static get collection() {
     return values;
   }
+
   [Symbol.toPrimitive]() {
     return this.value;
   }
@@ -25,9 +27,11 @@ const EnumCollection = values => {
       const value = values[arg];
       this.key = value ? arg : index[arg];
     }
+
     static get collection() {
       return values;
     }
+
     [Symbol.toPrimitive](hint) {
       const key = this.key;
       if (hint === 'number') return parseInt(key, 10);
