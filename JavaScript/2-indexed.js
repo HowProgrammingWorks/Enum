@@ -37,7 +37,7 @@ const Enum = (...args) => {
 
 // Test
 
-const testEnum = Month => {
+const testEnum = (Month) => {
   const neg = new Month(-1);
   const zero = new Month(0);
   const first = new Month(1);

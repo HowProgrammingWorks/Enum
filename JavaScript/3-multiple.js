@@ -2,7 +2,7 @@
 
 // Multiple Enum implementations
 
-const EnumArray = values => class {
+const EnumArray = (values) => class {
   constructor(val) {
     this.value = values.includes(val) ? val : undefined;
   }
@@ -16,7 +16,7 @@ const EnumArray = values => class {
   }
 };
 
-const EnumCollection = values => {
+const EnumCollection = (values) => {
   const index = {};
   for (const key in values) {
     const value = values[key];
@@ -49,7 +49,7 @@ const Enum = (...args) => {
 
 // Test
 
-const testEnum = Month => {
+const testEnum = (Month) => {
   const neg = new Month(-1);
   const zero = new Month(0);
   const first = new Month(1);

@@ -4,7 +4,7 @@
 
 class Enum {}
 
-const enumArray = values => class extends Enum {
+const enumArray = (values) => class extends Enum {
   constructor(val) {
     super();
     this.value = this.constructor.key(val);
@@ -27,7 +27,7 @@ const enumArray = values => class extends Enum {
   }
 };
 
-const enumCollection = values => {
+const enumCollection = (values) => {
   const index = {};
   for (const key in values) {
     const value = values[key];
