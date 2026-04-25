@@ -82,7 +82,7 @@ Enum.from = (...args) => {
     Sep: 'September',
     Oct: 'October',
     Nov: 'November',
-    Dec: 'December'
+    Dec: 'December',
   });
 
   console.log('Month class:');

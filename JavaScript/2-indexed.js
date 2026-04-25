@@ -10,7 +10,7 @@ const Enum = (...args) => {
   let numKeys = false;
   for (const name in collection) {
     const value = collection[name];
-    numKeys = numKeys || typeof value === 'number';
+    numKeys ||= typeof value === 'number';
     const key = numKeys ? value : name;
     values[key] = value;
     index[value] = key;
@@ -61,7 +61,7 @@ const testEnum = (Month) => {
     ['11', m11],
     ['12', m12],
     ['13', m13],
-    ['Hello', unknown]
+    ['Hello', unknown],
   ]);
 };
 
@@ -69,7 +69,7 @@ const testEnum = (Month) => {
 {
   const Month = Enum(
     'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    'July', 'August', 'September', 'October', 'November', 'December',
   );
   console.dir(Month.collection);
   testEnum(Month);
@@ -89,7 +89,7 @@ const testEnum = (Month) => {
     9: 'September',
     10: 'October',
     11: 'November',
-    12: 'December'
+    12: 'December',
   });
   console.dir(Month.collection);
   testEnum(Month);
@@ -109,7 +109,7 @@ const testEnum = (Month) => {
     Sep: 'September',
     Oct: 'October',
     Nov: 'November',
-    Dec: 'December'
+    Dec: 'December',
   });
   console.dir(Month.collection);
   testEnum(Month);
@@ -135,6 +135,6 @@ const testEnum = (Month) => {
     ['200', h300],
     ['500', h500],
     ['600', h600],
-    ['Hello', unknown]
+    ['Hello', unknown],
   ]);
 }

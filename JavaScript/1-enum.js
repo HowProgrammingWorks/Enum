@@ -5,7 +5,7 @@
 const Enum = (...values) => class {
   constructor(arg) {
     if (typeof arg === 'number') {
-      this.value = (arg > 0 && arg <= values.length) ? arg : undefined;
+      this.value = arg > 0 && arg <= values.length ? arg : undefined;
       return;
     }
     const value = values.indexOf(arg);
@@ -22,7 +22,7 @@ const Enum = (...values) => class {
 
 const Month = Enum(
   'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
+  'July', 'August', 'September', 'October', 'November', 'December',
 );
 
 // Usage
@@ -44,5 +44,5 @@ console.log([
   ['May', may],
   [12, last],
   [13, next],
-  ['Hello', unknown]
+  ['Hello', unknown],
 ]);
