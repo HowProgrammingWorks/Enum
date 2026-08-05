@@ -5,7 +5,8 @@
 const Enum = (...values) => class {
   constructor(arg) {
     if (typeof arg === 'number') {
-      this.value = arg > 0 && arg <= values.length ? arg : undefined;
+      const inRange = arg > 0 && arg <= values.length;
+      this.value = inRange ? arg : undefined;
       return;
     }
     const value = values.indexOf(arg);
